@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUP</title>
+</head>
+<body>
+    <%- include('partials/errorDisplay') -%>
+    <form action="/signup" method="POST">
+        <div> 
+            <label for="username" class="form-label">Username</label>
+            <input
+            name="name"
+            id="name"
+            type="text"
+            placeholder="Username"
+            required
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+            />
+        </div>
+    <div> 
+        <label for="email" class="form-label">Email</label>
+        <input
+        name="email"
+        id="email"
+        type="email"
+        placeholder="E-mail"
+        required
+        value="<%= typeof email != 'undefined' ? email : '' %>"
+        />
+    </div>
+    <div> 
+        <label for="password" class="form-label">Password</label>
+        <input
+        name="password"
+        id="password"
+        type="password"
+        placeholder="Enter Password"
+        required
+        value="<%= typeof password != 'undefined' ? password : '' %>"
+        />
+    </div>
+    <div> 
+        <label for="password2" class="form-label">Confirm Password</label>
+        <input
+        name="password2"
+        id="password2"
+        type="password"
+        placeholder="Confirm Password"
+        required
+        value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+        />
+    </div>
+    <button>Signup</button>
+</form>
+<p >Have An Account? <a href="/users/login">Login</a></p>
+</body>
+</html>
