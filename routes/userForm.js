@@ -1,7 +1,7 @@
 const express = require('express');
+const passport = require('passport');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-const passport = require('passport');
 
 // Load User model
 const User = require('../models/user.js');// .. two dots for going outside present folder
@@ -88,7 +88,7 @@ router.post('/signup', (req, res) => {
 // Login
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', {
-    successRedirect: '/dasboard',
+    successRedirect: '/dashboard',
     failureRedirect: '/login',
     failureFlash: true
   })(req, res, next);

@@ -1,14 +1,14 @@
 const express = require('express');
+const passport = require('passport');
+const app = express();
 //const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const path =require('path');
-const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
 const LocalStrategy = require('passport-local').Strategy;
 //const passportSetup=require('./configs/passportSetup');
 
-const app = express();
 
 app.set('view-engine','ejs');
 app.set('views',path.join(__dirname,'views'));
@@ -70,7 +70,7 @@ app.use(flash());
 
 //defining flash success middleware
 app.use((req,res,next)=>{
-    res.locals.success_msg= req.flash("success");
+    res.locals.success_msg= req.flash('success_msg');
     // add<%= success %> at the top of index.ejs that will be the home page of your app
     // check phase 2part c last 2 videos check it
     res.locals.error_msg = req.flash('error_msg');
