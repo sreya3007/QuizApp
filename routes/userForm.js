@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 
 // Load User model
 const User = require('../models/user.js');// .. two dots for going outside present folder
-const { forwardAuthenticated } = require('../configs/auth');
+const {forwardAuthenticated} = require('../configs/auth');
 
 
 // Login Page

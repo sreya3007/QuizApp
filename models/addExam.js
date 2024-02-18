@@ -31,6 +31,6 @@ const examSchema = new mongoose.Schema ({
         // this an array  which stores all the question id remember not the questions but its id
         required: true,
     }
-})
+});
 const Exam = mongoose.model("exams",examSchema);
 module.exports=Exam;
