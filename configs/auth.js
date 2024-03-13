@@ -1,6 +1,6 @@
 module.exports = {
     ensureAuthenticated: function(req, res, next) {
-      if (req.isAuthenticated) {
+      if (req.isAuthenticated) {  // returns true if user is logged in
         return next();
       }
       req.flash('error_msg', 'Please log in to view that resource');
@@ -13,3 +13,5 @@ module.exports = {
       res.redirect('/dashboard');      
     }
   };
+
+

@@ -71,7 +71,7 @@ app.use(flash());
 //defining flash success middleware
 app.use((req,res,next)=>{
     res.locals.success_msg= req.flash('success_msg');
-    // add<%= success %> at the top of index.ejs that will be the home page of your app
+    // add<%= success_msg %> at the top of index.ejs that will be the home page of your app
     // check phase 2part c last 2 videos check it
     res.locals.error_msg = req.flash('error_msg');
   res.locals.error = req.flash('error');
